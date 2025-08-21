@@ -17,9 +17,9 @@ export const Header = () => {
         {/* Left: Logo & App Name */}
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 rounded-xl glass-button flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">HR</span>
+            <span className="text-primary-foreground font-bold text-lg">SES</span>
           </div>
-          <h1 className="text-xl font-semibold text-foreground">HR Dashboard</h1>
+          <h1 className="text-xl font-semibold text-foreground">Shiva Engineerig Services</h1>
         </div>
 
         {/* Center: Global Search */}
