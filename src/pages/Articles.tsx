@@ -226,8 +226,8 @@ export default function Articles() {
   const [selectedArticle, setSelectedArticle] = useState<any>(null);
   const [modalType, setModalType] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
 
   const openModal = (article: any, type: string) => {
     setSelectedArticle(article);
@@ -297,7 +297,7 @@ export default function Articles() {
                   <SelectValue placeholder="Status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Status</SelectItem>
+                  <SelectItem value="all">All Status</SelectItem>
                   <SelectItem value="Active">Active</SelectItem>
                   <SelectItem value="Pending">Pending</SelectItem>
                   <SelectItem value="Completed">Completed</SelectItem>
@@ -309,7 +309,7 @@ export default function Articles() {
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Categories</SelectItem>
+                  <SelectItem value="all">All Categories</SelectItem>
                   <SelectItem value="Technology">Technology</SelectItem>
                   <SelectItem value="Construction">Construction</SelectItem>
                   <SelectItem value="Real Estate">Real Estate</SelectItem>
