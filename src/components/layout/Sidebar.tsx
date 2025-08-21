@@ -35,7 +35,7 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
   return (
     <aside
       className={cn(
-        "fixed left-0 top-16 bottom-0 glass-nav border-r border-border/20 transition-all duration-300 z-40",
+        "fixed left-0 top-16 bottom-0 glass-nav shadow-lg transition-all duration-300 z-40",
         collapsed ? "w-16" : "w-64"
       )}
     >

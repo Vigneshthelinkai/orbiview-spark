@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
-import { QuickActions } from "./QuickActions";
+import { DynamicQuickActions } from "./DynamicQuickActions";
+import { Chatbot } from "./Chatbot";
 import { cn } from "@/lib/utils";
 
 interface LayoutProps {
@@ -18,7 +19,8 @@ export const Layout = ({ children }: LayoutProps) => {
         collapsed={sidebarCollapsed}
         onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
       />
-      <QuickActions />
+      <DynamicQuickActions />
+      <Chatbot />
       
       <main
         className={cn(

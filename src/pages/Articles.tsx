@@ -75,49 +75,65 @@ interface ArticleModalProps {
 
 const RDModal = ({ article, isOpen, onClose }: ArticleModalProps) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
-    <DialogContent className="max-w-2xl glass-card">
-      <DialogHeader>
-        <DialogTitle className="flex items-center gap-2">
-          <Tag className="h-5 w-5 text-primary" />
+    <DialogContent className="max-w-3xl glass-card backdrop-blur-md shadow-2xl border border-border/20">
+      <DialogHeader className="pb-6">
+        <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl glass-button flex items-center justify-center">
+            <Tag className="h-5 w-5 text-primary-foreground" />
+          </div>
           R&D Article Details
         </DialogTitle>
       </DialogHeader>
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Relevancy</label>
-            <Badge variant="outline" className="bg-success/10 text-success">High Relevance</Badge>
+      <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Title</label>
+              <p className="font-semibold mt-1 text-foreground">{article?.title}</p>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Relevancy</label>
+              <Badge variant="outline" className="bg-success/10 text-success mt-2 border-success/20">High Relevance</Badge>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">R&D Focus Area</label>
+              <p className="mt-1 text-sm">Artificial Intelligence, Machine Learning</p>
+            </div>
           </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Proceed Status</label>
-            <Badge variant="outline" className="bg-primary/10 text-primary">Proceed</Badge>
+          <div className="space-y-4">
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">R&D Type</label>
+              <p className="mt-1 text-sm">Applied Research</p>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Proceed Status</label>
+              <Badge variant="outline" className="bg-primary/10 text-primary mt-2 border-primary/20">Proceed</Badge>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Published Date</label>
+              <p className="mt-1 text-sm">{article?.date}</p>
+            </div>
           </div>
         </div>
         
-        <div className="space-y-2">
+        <div className="glass-card p-4 rounded-xl">
           <label className="text-sm font-medium text-muted-foreground">Insights Summary</label>
-          <p className="text-sm bg-muted/50 p-3 rounded-lg">
-            This article discusses breakthrough AI technologies in healthcare with significant R&D opportunities for our clients.
+          <p className="mt-2 text-sm leading-relaxed">
+            This article discusses breakthrough AI technologies in healthcare with significant R&D opportunities for our clients. The research focuses on developing innovative solutions that could transform patient care.
           </p>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">R&D Focus Area</label>
-            <p className="text-sm">Artificial Intelligence, Machine Learning</p>
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">R&D Type</label>
-            <p className="text-sm">Applied Research</p>
+        <div className="glass-card p-4 rounded-xl">
+          <label className="text-sm font-medium text-muted-foreground">Location</label>
+          <div className="flex items-center gap-2 mt-2">
+            <MapPin className="h-4 w-4 text-primary" />
+            <span className="text-sm">United States → California → San Francisco</span>
           </div>
         </div>
-        
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Location</label>
-          <div className="flex items-center gap-2 text-sm">
-            <MapPin className="h-4 w-4 text-muted-foreground" />
-            <span>United States → California → San Francisco</span>
-          </div>
+
+        <div className="flex justify-end gap-3 pt-4 border-t border-border/20">
+          <Button variant="outline" onClick={onClose}>Close</Button>
+          <Button variant="glass">Mark as Processed</Button>
         </div>
       </div>
     </DialogContent>
@@ -126,48 +142,60 @@ const RDModal = ({ article, isOpen, onClose }: ArticleModalProps) => (
 
 const ProjectModal = ({ article, isOpen, onClose }: ArticleModalProps) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
-    <DialogContent className="max-w-2xl glass-card">
-      <DialogHeader>
-        <DialogTitle className="flex items-center gap-2">
-          <Building2 className="h-5 w-5 text-primary" />
+    <DialogContent className="max-w-3xl glass-card backdrop-blur-md shadow-2xl border border-border/20">
+      <DialogHeader className="pb-6">
+        <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl glass-button flex items-center justify-center">
+            <Building2 className="h-5 w-5 text-primary-foreground" />
+          </div>
           Project Announced Details
         </DialogTitle>
       </DialogHeader>
-      <div className="space-y-4">
-        <div className="space-y-2">
+      <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Company Name</label>
+              <p className="font-semibold mt-1 text-foreground">{article?.company}</p>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Project Scope</label>
+              <p className="mt-1 text-sm">Large Scale Infrastructure Development</p>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Lead Source</label>
+              <p className="mt-1 text-sm">Industry Publication</p>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Category</label>
+              <Badge variant="outline" className="mt-1">{article?.category}</Badge>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Location</label>
+              <div className="flex items-center gap-2 mt-1">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span className="text-sm">{article?.location}</span>
+              </div>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Published Date</label>
+              <p className="mt-1 text-sm">{article?.date}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="glass-card p-4 rounded-xl">
           <label className="text-sm font-medium text-muted-foreground">Identified Opportunity</label>
-          <p className="text-sm bg-muted/50 p-3 rounded-lg">
-            New infrastructure development project with potential for construction and engineering services.
+          <p className="mt-2 text-sm leading-relaxed">
+            New infrastructure development project with significant potential for construction and engineering services. The project involves modernizing critical systems and presents excellent collaboration opportunities with established industry leaders.
           </p>
         </div>
-        
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Company Name</label>
-            <p className="text-sm font-medium">{article.company}</p>
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Category</label>
-            <Badge variant="outline">{article.category}</Badge>
-          </div>
-        </div>
-        
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Project Details Scope</label>
-          <p className="text-sm bg-muted/50 p-3 rounded-lg">
-            Large-scale infrastructure development including roads, utilities, and commercial facilities.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Lead Source</label>
-            <p className="text-sm">Industry Publication</p>
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Published Date</label>
-            <p className="text-sm">{article.date}</p>
-          </div>
+
+        <div className="flex justify-end gap-3 pt-4 border-t border-border/20">
+          <Button variant="outline" onClick={onClose}>Close</Button>
+          <Button variant="glass">Create Proposal</Button>
         </div>
       </div>
     </DialogContent>
@@ -176,46 +204,66 @@ const ProjectModal = ({ article, isOpen, onClose }: ArticleModalProps) => (
 
 const CompletedModal = ({ article, isOpen, onClose }: ArticleModalProps) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
-    <DialogContent className="max-w-2xl glass-card">
-      <DialogHeader>
-        <DialogTitle className="flex items-center gap-2">
-          <Eye className="h-5 w-5 text-primary" />
+    <DialogContent className="max-w-3xl glass-card backdrop-blur-md shadow-2xl border border-border/20">
+      <DialogHeader className="pb-6">
+        <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl glass-button flex items-center justify-center">
+            <Eye className="h-5 w-5 text-primary-foreground" />
+          </div>
           Completed Project Details
         </DialogTitle>
       </DialogHeader>
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Relevancy</label>
-            <Badge variant="outline" className="bg-success/10 text-success">Relevant</Badge>
+      <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Title</label>
+              <p className="font-semibold mt-1 text-foreground">{article?.title}</p>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Relevancy</label>
+              <Badge variant="outline" className="bg-success/10 text-success mt-2 border-success/20">Relevant</Badge>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Project Keywords</label>
+              <div className="flex flex-wrap gap-2 mt-1">
+                {article?.keywords.split(", ").map((keyword: string) => (
+                  <Badge key={keyword} variant="secondary" className="text-xs">
+                    {keyword}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-muted-foreground">Proceed Status</label>
-            <Badge variant="outline" className="bg-primary/10 text-primary">Proceed</Badge>
+          <div className="space-y-4">
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Companies Mentioned</label>
+              <p className="font-medium mt-1">{article?.company}</p>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Location</label>
+              <div className="flex items-center gap-2 mt-1">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span className="text-sm">{article?.location}</span>
+              </div>
+            </div>
+            <div className="glass-card p-4 rounded-xl">
+              <label className="text-sm font-medium text-muted-foreground">Published Date</label>
+              <p className="mt-1 text-sm">{article?.date}</p>
+            </div>
           </div>
         </div>
         
-        <div className="space-y-2">
+        <div className="glass-card p-4 rounded-xl">
           <label className="text-sm font-medium text-muted-foreground">Insights Summary</label>
-          <p className="text-sm bg-muted/50 p-3 rounded-lg">
-            Successful completion of major office complex project, demonstrating market demand for similar developments.
+          <p className="mt-2 text-sm leading-relaxed">
+            Successful completion of major office complex project, demonstrating market demand for similar developments. This completed project provides valuable insights and reference potential for similar future opportunities.
           </p>
         </div>
-        
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Project Keywords</label>
-          <div className="flex flex-wrap gap-2">
-            {article.keywords.split(", ").map((keyword: string) => (
-              <Badge key={keyword} variant="secondary" className="text-xs">
-                {keyword}
-              </Badge>
-            ))}
-          </div>
-        </div>
-        
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Companies Mentioned</label>
-          <p className="text-sm font-medium">{article.company}</p>
+
+        <div className="flex justify-end gap-3 pt-4 border-t border-border/20">
+          <Button variant="outline" onClick={onClose}>Close</Button>
+          <Button variant="glass">Follow Up</Button>
         </div>
       </div>
     </DialogContent>

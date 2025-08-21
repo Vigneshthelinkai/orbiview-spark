@@ -1,4 +1,4 @@
-import { Bell, Search, Lightbulb, MessageCircle, User } from "lucide-react";
+import { Bell, Search, MessageCircle, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-16 glass-nav border-b border-border/20">
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 glass-nav shadow-lg">
       <div className="flex items-center justify-between h-full px-6">
         {/* Left: Logo & App Name */}
         <div className="flex items-center gap-4">
@@ -37,10 +37,6 @@ export const Header = () => {
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" className="hover:bg-primary/10">
             <Bell className="h-5 w-5" />
-          </Button>
-          
-          <Button variant="ghost" size="icon" className="hover:bg-primary/10">
-            <Lightbulb className="h-5 w-5" />
           </Button>
           
           <Button variant="ghost" size="icon" className="hover:bg-primary/10">
