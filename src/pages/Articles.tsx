@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, Filter, Mail, Eye, Calendar, MapPin, Building2, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -314,9 +315,11 @@ export default function Articles() {
           <p className="text-muted-foreground mt-1">Manage and track article insights and email drafts</p>
         </div>
         
-        <Button variant="glass">
-          <Mail className="h-4 w-4 mr-2" />
-          Go to Email Drafts
+        <Button variant="glass" asChild>
+          <Link to="/email-drafts">
+            <Mail className="h-4 w-4 mr-2" />
+            Go to Email Drafts
+          </Link>
         </Button>
       </div>
 
