@@ -5,6 +5,8 @@ import { DynamicQuickActions } from "./DynamicQuickActions";
 import { Chatbot } from "./Chatbot";
 import { cn } from "@/lib/utils";
 
+import React from "react";
+
 interface LayoutProps {
   children: React.ReactNode;
 }
