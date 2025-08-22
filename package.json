@@ -2,9 +2,13 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "build": "echo 'no build script'"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "tsc && vite build", 
+  "build:dev": "vite build --mode development",
+  "preview": "vite preview"
+},
+
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
